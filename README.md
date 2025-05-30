@@ -7,13 +7,15 @@ To come - GEO!
 Processing of the data is done with the align.sh script wiht the following usage:
 
 ```align.sh [-h] [-o output dir -f full file name for input bam -b base name -i index] -- program to align ICEMaP data ```
+Where you specify output directory, file name, the base name of the file you are aligning (will be carried through for naming of the intermediate and final output files), and the index. We will walk through an example here
 ### Step 0 (optional)
-Create a list of file names:
+Create a list of file names (useful to align multiple .bam files):
 
 ```ls -l ../MiSeq/*.bam | grep -v mapped | awk '{print $9}' > filelist.txt```
 ### Step 1
+Create fastq of the .bam files:
 
-
+```bedtools bamtofastq -i ${file} -fq ${dir}/${base}.1.fastq -fq2 ${dir}/${base}.2.fastq```
 ### Step 2
 Merge reads using flash2:
 
