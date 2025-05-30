@@ -38,5 +38,10 @@ Sort:
 
 ```samtools sort -o ${dir}/${base}.mapped.sorted.bam ${dir}/${base}.mapped.raw.bam```
 
+### Post-processing: piledriver
+After mapping and sorting the reads, count mutations using (piledriver)[]:
+
+```bamtools piledriver -fasta ~/ICEMaP/data/references//5HT2cR-ligated-5N.fa -in ${base}.sorted.bam -out ${base}.piledriver.txt```
+
 ## Contact
 For specific questions about the code or the work, please contact [Layla Siraj](layla.siraj@gmail.com) or [Aaron Lin](alin@broadinstitute.org).
