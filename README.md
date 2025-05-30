@@ -17,11 +17,11 @@ Create fastq of the .bam files:
 
 ```bedtools bamtofastq -i ${file} -fq ${dir}/${base}.1.fastq -fq2 ${dir}/${base}.2.fastq```
 ### Step 2
-Merge reads using flash2:
+Merge reads using [flash2](https://github.com/dstreett/FLASH2):
 
 ```flash2 -O -m 40 -M 260 -o ${dir}/${base} ${dir}/${base}.1.fastq ${dir}/${base}.2.fastq```
 ### Step 3
-Build a bowtie2 index. Here, we are using the 5HT2cR gene as our reference, with N's at the editing sites:
+Build a [bowtie2](https://github.com/BenLangmead/bowtie2) index. Here, we are using the 5HT2cR gene as our reference, with N's at the editing sites:
 
 ```bowtie2-build ~/ICEMaP/data/references/5HT2cR-ligated-5N.fa ~/ICEMaP/data/references/5HT2cR-ligated-5N ```
 ### Step 4 
