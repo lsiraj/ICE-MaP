@@ -4,14 +4,24 @@ Here we introduce ICE-MaP, Inosine CyanoEthylation and Mutational Profiling, bui
 ## Data
 To come - GEO!
 ## Processing
-### Step 1
+Processing of the data is done with the align.sh script wiht the following usage:
+
+```align.sh [-h] [-o output dir -f full file name for input bam -b base name -i index] -- program to align ICEMaP data ```
+### Step 0 (optional)
 Create a list of file names:
 
 ```ls -l ../MiSeq/*.bam | grep -v mapped | awk '{print $9}' > filelist.txt```
+### Step 1
+
+
 ### Step 2
 Merge reads using flash2:
 
 ```flash2 -O -m 40 -M 260 -o $base ${base}.1.fastq ${base}.2.fastq```
 ### Step 3
+Build a bowtie2 index. Here, we are using the 5HT2cR gene as our reference, with N's at the editing sites:
+
+```bowtie2-build ~/ICEMaP/data/references/5HT2cR-ligated-5N.fa ~/ICEMaP/data/references/5HT2cR-ligated-5N ```
+
 ## Contact
 For specific questions about the code or the work, please contact [Layla Siraj](layla.siraj@gmail.com) or [Aaron Lin](alin@broadinstitute.org).
