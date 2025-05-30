@@ -6,6 +6,7 @@ To come - GEO!
 ## Processing
 ### Step 1
 Create a list of file names
+
 ```ls -l ../MiSeq/*.bam | grep -v mapped | awk '{print $9}' > filelist.txt```
 ## Contact
 For specific questions about the code or the work, please contact [Layla Siraj](layla.siraj@gmail.com) or [Aaron Lin](alin@broadinstitute.org).
