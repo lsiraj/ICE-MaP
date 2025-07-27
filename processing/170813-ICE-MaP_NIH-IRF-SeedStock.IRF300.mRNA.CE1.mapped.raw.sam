@@ -1,0 +1,3 @@
+@HD	VN:1.0	SO:unsorted
+@SQ	SN:5HT2cR-ligated-N	LN:218
+@PG	ID:bowtie2	PN:bowtie2	VN:2.3.5.1	CL:"/usr/bin/bowtie2-align-s --wrapper basic-0 --very-sensitive-local -x /home/sirajl/ICEMaP/data/references/5HT2cR-ligated-5N --passthrough -U 170813-ICE-MaP_NIH-IRF-SeedStock.IRF300.mRNA.CE1.extendedFrags.fastq"
