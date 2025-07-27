@@ -1,1 +1,0 @@
-chrom	start	end	ref	depth	r_depth	a_depth	num_A	num_C	num_G	num_T	num_D	num_I	totQ_A	totQ_C	totQ_G	totQ_T	all_ins	num_F_A	num_F_C	num_F_G	num_F_T	num_F_D	num_F_I	totQ_F_A	totQ_F_C	totQ_F_G	totQ_F_T	all_F_ins	num_R_A	num_R_C	num_R_G	num_R_T	num_R_D	num_R_I	totQ_R_A	totQ_R_C	totQ_R_G	totQ_R_T	all_R_ins	sample_1
