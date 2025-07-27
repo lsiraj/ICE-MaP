@@ -2,7 +2,7 @@
 ## About
 Here we introduce ICE-MaP, Inosine CyanoEthylation and Mutational Profiling, building upon previous experimental methods for detecting inosines. ICE-MaP can accurately quantify inosines at single-base resolution, down to 10% frequency. Moreover, ICE-MaP can detect up to 5 inosines at a 13-base editing hotspot, and provides phase data for disentangling multiple editing patterns. ICE-MaP is compatible with a wider range of library construction and sequencing methods, including long read technology, making it possible to phase multiple  hotspots even hundreds of bases apart. 
 ## Data
-To come - GEO!
+Raw data is submitted to SRA (submission: SUB15494827)
 ## Processing
 Processing of the data is done with the align.sh script, which takes .bam files and aligns them to a user-provided index:
 
@@ -44,9 +44,20 @@ After mapping and sorting the reads, count mutations using [piledriver](https://
 ```bamtools piledriver -fasta ~/ICEMaP/data/references//5HT2cR-ligated-5N.fa -in ${base}.sorted.bam -out ${base}.piledriver.txt```
 
 ## Mutation proportions
+```coverage.R``` estimates the coverage along the oligo.
+
+``` mutprops.R``` estimates the proportion of each base at A-to-I edited bases using SSII and TGIRT enzymes. 
+
+
 ## Mutation rate
+``` mut_rate.R``` estimates the mutational rate of A/G/N called bases to T for de novo A-to-I editing detection
+
+
 ## Detecting admixture
+```admixture.R``` parses mutational rates at A-to-I edited sites in pool s with different admixtures of inosine vs adenosine at the A site. 
+
 ## ICE-PIK
+ICE-PIK phases k-mers to detect multiple A to I edits in the same oligo. 
 
 ## Contact
 For specific questions about the code or the work, please contact [Layla Siraj](layla.siraj@gmail.com) or [Aaron Lin](alin@broadinstitute.org).
